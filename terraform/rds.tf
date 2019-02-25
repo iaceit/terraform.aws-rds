@@ -13,13 +13,13 @@ resource "aws_db_instance" "main_mysql_db" {
   engine_version             = "5.7"
   instance_class             = "db.t2.micro"
   publicly_accessible        = false
-  security_group_names       = ["${module.networks.internal_sg_id}"]
+  vpc_security_group_ids     = ["${module.networks.internal_sg_id}"]
   skip_final_snapshot        = true
   storage_type               = "gp2"
 
   name     = "main_mysql_db"
-  username = "mysql"
-  password = "secret"
+  username = "root"
+  password = "thesecret"
   port     = "3306"
 
   tags = "${merge(map("Name" ,"main_mysql_db"),var.tags)}"

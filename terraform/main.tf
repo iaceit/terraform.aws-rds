@@ -2,8 +2,8 @@ terraform {
     version = ">= 0.11.11"
 
     backend "s3" {
-        region = "ap-southeast-2"
-        bucket = "973039937378-infra"
+        region = "us-east-1"
+        bucket = "haomingyin.com"
         key = "haomingyin.com/terraform/aws-rds/ap-southeast-2/terraform.tfstate"
     }
 }
