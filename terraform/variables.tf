@@ -8,7 +8,7 @@ variable "tags" {
   default = {
     "service"    = "iaceit.com"
     "created-by" = "terraform"
-    "owner"      = "iaceit.yin"
+    "owner"      = "iaceit.com"
     "repo"       = "terraform.aws-rds"
   }
 }
