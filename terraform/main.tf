@@ -1,9 +1,10 @@
 terraform {
-    version = ">= 0.11.11"
+  required_version = ">= 0.12"
 
-    backend "s3" {
-        region = "us-east-1"
-        bucket = "haomingyin.com"
-        key = "haomingyin.com/terraform/aws-rds/ap-southeast-2/terraform.tfstate"
-    }
+  backend "s3" {
+    region = "us-east-1"
+    bucket = "iaceit.com"
+    key    = "iaceit.com/terraform/aws-rds/ap-southeast-2/terraform.tfstate"
+  }
 }
+
