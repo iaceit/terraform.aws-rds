@@ -10,27 +10,27 @@ module "secrets" {
   region = var.region
 }
 
-resource "aws_db_instance" "main_mysql_db" {
+resource "aws_db_instance" "main_maria_db" {
   allocated_storage          = 10
   auto_minor_version_upgrade = true
   backup_retention_period    = 7
   db_subnet_group_name       = aws_db_subnet_group.main_internal_sg.id
-  engine                     = "mysql"
-  engine_version             = "5.7"
+  engine                     = "mariadb"
+  engine_version             = "10.3"
   instance_class             = "db.t2.micro"
   publicly_accessible        = false
   vpc_security_group_ids     = [module.networks.internal_sg_id]
   skip_final_snapshot        = true
   storage_type               = "gp2"
 
-  name     = "main_mysql_db"
+  name     = "main_maria_db"
   username = "root"
   password = module.secrets.db_password
   port     = "3306"
 
   tags = merge(
     {
-      "Name" = "main_mysql_db"
+      "Name" = "main_maria_db"
     },
     var.tags,
   )
